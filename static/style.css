@@ -1,0 +1,9 @@
+.logo {
+    margin-left: 5px;
+}
+
+@media (max-width: 992px) {
+    .card-wrapper{
+        justify-content: center !important;
+    }
+ }

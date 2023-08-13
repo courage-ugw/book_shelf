@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <legend class=" row justify-content-center">
+        <h5 class="h5 col-md-8 col-lg-3"> Add Book</h5>
+    </legend>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-4">
+            <form class="row g-3" action="{{ url_for('add_book') }}" method="post">
+                <div class="">
+                    <label for="book-title" class="form-label">Book Title</label>
+                    <input type="text" class="form-control" id="book-title" name="book-title" required>
+                    <div class="invalid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="">
+                    <label for="author-name" class="form-label">Author Name</label>
+                    <input type="text" class="form-control" id="author-name" name="author-name" required>
+                    <div id="authorName" class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>
+                </div>
+
+                <div class="">
+                    <label for="publication-year" class="form-label">Publication Year</label>
+                    <input type="text" class="form-control" id="publication-year" name="publication-year" required>
+                    <div class="invalid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="">
+                    <label for="isbn" class="form-label">ISBN</label>
+                    <input type="text" class="form-control" id="isbn" name="isbn" required>
+                    <div id="" class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>
+                </div>
+
+                <div class="">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

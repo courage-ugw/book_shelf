@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <legend class=" row justify-content-center">
+        <h5 class="h5 col-md-8 col-lg-3"> Add Author Details</h5>
+    </legend>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-4">
+            <form class="row g-3" action="{{ url_for('add_author') }}" method="post">
+                <div class="">
+                    <label for="name" class="form-label">Author Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="">
+                    <label for="birth-date" class="form-label">Birth Date</label>
+                    <input type="date" class="form-control" id="birth-date" name="birth-date" required>
+                    <div class="invalid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="">
+                    <label for="death-date" class="form-label">Death Date</label>
+                    <input type="date" class="form-control" id="death-date" name="death-date" required>
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                        provide a valid date
+                    </div>
+                </div>
+
+                <div class="">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

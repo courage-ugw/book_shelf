@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <a href="{{ url_for('home') }}" class="link-dark">Go Back to Home Page</a>
+</div>
+<div class="container mt-4">
+  <div class="row row-cols-md-3 g-4 card-wrapper">
+    {% for book_data in books_data %}
+      {% if book_data.cover_url != " " %}
+        <div class="" style="width:300px; height: 500px">
+          <!-- <img src="/sites/default/files/default-book-cover.jpg" style="height:250px; width:190px; background-color:#dddddd"/> -->
+          <div class="card" style=" background-color:#dddddd">
+            <img src="{{ book_data.cover_url }}" class="mx-auto pt-1" alt="{{ book_data.title }}"
+                 style="height:250px; width:200px; background-color:#dddddd">
+            <div class="card-body">
+              <h5 class="card-title fs-3"> {{ book_data.title }}</h5>
+              <h5 class="card-text fs-6">By {{ book_data.author }}</h5>
+              <p class="card-text">Published in {{ book_data.publication_year }}</p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
